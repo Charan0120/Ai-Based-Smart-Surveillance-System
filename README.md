@@ -1,4 +1,11 @@
-# AI-Based Smart Surveillance System 🛡️👁️
+# Team Members
+**G.Siddhartha 2451-23-749-303**
+**B.Charan 2451-23-749-001**
+**N.Vikas 2451-23-749-031**
+
+
+
+# AI-Based Smart Surveillance System 
 
 An end-to-end, real-time AI surveillance system that uses an **ESP32 Camera** to stream video over WebSockets to a **Python server**, which processes the frames using **YOLOv8** for weapon detection and **Face Recognition** for unauthorized person detection. 
 
@@ -6,7 +13,7 @@ The system includes a beautiful, futuristic web dashboard with role-based access
 
 ---
 
-## ✨ Features
+##  Features
 - **Hardware Integration:** Real-time low-latency video streaming from an ESP32-CAM via WebSockets.
 - **Weapon Detection:** Uses a custom-trained YOLOv8 model (`best1.pt`) to instantly detect dangerous objects (e.g., guns, knives).
 - **Face Recognition:** Compares live faces against an `authorized/` database directory.
@@ -19,7 +26,7 @@ The system includes a beautiful, futuristic web dashboard with role-based access
 
 ---
 
-## 🛠️ Hardware Requirements
+##  Hardware Requirements
 1. **ESP32-CAM Module** (AI-Thinker model recommended)
 2. FTDI Programmer (to upload code to the ESP32)
 3. A Windows/Mac/Linux Laptop (acts as the AI Server)
@@ -27,7 +34,7 @@ The system includes a beautiful, futuristic web dashboard with role-based access
 
 ---
 
-## 💻 Software Prerequisites
+##  Software Prerequisites
 Before you begin, ensure you have the following installed on your laptop:
 - **Python 3.9 - 3.11** (Do not use 3.12+ as some ML libraries may have conflicts)
 - **Git**
@@ -42,7 +49,7 @@ pip install flask websockets opencv-python numpy ultralytics face_recognition dl
 
 ---
 
-## 🚀 Setup & Installation (Step-by-Step)
+##  Setup & Installation (Step-by-Step)
 
 ### Step 1: Clone the Repository
 ```bash
@@ -74,7 +81,7 @@ cd Ai-Based-Smart-Surveillance-System
 
 ---
 
-## 🏃‍♂️ Running the System
+##  Running the System
 
 ### 1. Start the Server
 Open a terminal in the project folder and run:
@@ -108,7 +115,7 @@ If you want to view the dashboard on your phone while away from home:
 
 ---
 
-## 📁 Project Architecture Breakdown
+##  Project Architecture Breakdown
 
 - **`app.py`**: The Flask Web Server. Handles HTTP routing, serves the dashboard, handles photo uploads, and starts the WebSocket server in the background.
 - **`websocket_server.py`**: Listens on Port 8765. Receives raw JPEG frames from the ESP32 and stores them in memory.
@@ -121,5 +128,5 @@ If you want to view the dashboard on your phone while away from home:
 
 ---
 
-## 🛡️ Security Note
+##  Security Note
 **Never upload your `firebasekey.json` to GitHub!** This repository includes a `.gitignore` file specifically designed to block this file from being pushed. If you deploy this to a cloud VPS, you must manually transfer the JSON key to the server.
